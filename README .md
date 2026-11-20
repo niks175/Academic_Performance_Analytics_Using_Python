@@ -7,10 +7,10 @@ The dataset is the UCI *Student Performance* data (Mathematics): **395 students,
 ## Project Structure
 
 ```
-├── analyse.py            # EDA script: cleaning, statistics, 8 visualizations
-├── data/
-│   └── student-mat.csv   # Cleaned dataset (comma-separated)
-├── output/               # Generated plots + summary_report.txt
+├── analyse.py              # EDA script: cleaning, statistics, 8 visualizations
+├── student-mat.csv         # Cleaned dataset (comma-separated)
+├── 01_...08_*.png          # Generated charts
+├── summary_report.txt      # Generated statistical summary
 ├── requirements.txt
 └── README.md
 ```
@@ -20,7 +20,7 @@ The dataset is the UCI *Student Performance* data (Mathematics): **395 students,
 1. **Loads and validates** the data (checks all 33 expected columns, fixes numeric types).
 2. **Cleans** it: duplicate and missing-value checks (none found in this dataset).
 3. **Engineers features**: `avg_grade`, `grade_change` (G3 - G1) and `passed` (G3 >= 10).
-4. **Summarizes**: descriptive statistics, key metrics, top correlations, group averages (saved to `output/summary_report.txt`).
+4. **Summarizes**: descriptive statistics, key metrics, top correlations, group averages (saved to `summary_report.txt`).
 5. **Visualizes**: 8 charts saved as PNG files.
 
 ## Getting Started
@@ -35,7 +35,7 @@ python analyse.py
 Options:
 
 ```bash
-python analyse.py --input data/student-mat.csv --output-dir output --show
+python analyse.py --input student-mat.csv --output-dir . --show
 ```
 
 ## Key Findings
@@ -63,10 +63,10 @@ python analyse.py --input data/student-mat.csv --output-dir output --show
 
 | | |
 |---|---|
-| ![Grade distribution](output/01_grade_distribution.png) | ![Grade progression](output/02_grade_progression.png) |
-| ![Correlation heatmap](output/03_correlation_heatmap.png) | ![Top correlations](output/04_top_correlations_with_G3.png) |
-| ![Absences vs G3](output/05_absences_vs_G3.png) | ![Study time and failures](output/06_studytime_and_failures.png) |
-| ![Group comparison](output/07_group_comparison.png) | ![Alcohol vs G3](output/08_alcohol_vs_G3.png) |
+| ![Grade distribution](01_grade_distribution.png) | ![Grade progression](02_grade_progression.png) |
+| ![Correlation heatmap](03_correlation_heatmap.png) | ![Top correlations](04_top_correlations_with_G3.png) |
+| ![Absences vs G3](05_absences_vs_G3.png) | ![Study time and failures](06_studytime_and_failures.png) |
+| ![Group comparison](07_group_comparison.png) | ![Alcohol vs G3](08_alcohol_vs_G3.png) |
 
 ## Data Source
 
